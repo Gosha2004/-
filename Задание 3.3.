@@ -1,0 +1,39 @@
+using System;
+namespace ConsoleApplication1
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ Console.Write("a=");
+ double a = double.Parse(Console.ReadLine());
+ Console.Write("b=");
+ double b = double.Parse(Console.ReadLine());
+ Console.Write("h=");
+ double h = double.Parse(Console.ReadLine());
+ for (double x = 0; x <= 30; x += 1)
+ {
+ f(x, out double y);
+ Console.WriteLine($"f({x,5:F})={y,10:F2}");
+ }
+ for (double i = a; i <= b; i += h)
+ Console.WriteLine("f({0:f2})={1:f4}", i, f(i));
+ }
+ static double f(double x)
+ {
+ double y;
+ if (x < 0) y = -4;
+ else if (x >= 0 && x < 1) y = ((x * x) + (3 * x) + 4);
+ else y = 2;
+ return y;
+ }
+ static void f(double x, out double y)
+ {
+ y = x < 0
+ ? -4
+ : x >= 0 && x < 1
+ ? ((x * x) + (3 * x) + 4)
+ : 2;
+ }
+ }
+}
