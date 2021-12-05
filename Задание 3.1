@@ -1,0 +1,13 @@
+using System;
+public class Test
+{
+ public static void Main()
+ {
+ Console.WriteLine("Ответ: " + (Meth(6) + Meth(13) + Meth(21)) * 0.5);
+ Console.ReadKey();
+ }
+ static double Meth(uint n)
+ {
+ return Math.Sqrt(n) + n;
+ }
+}
